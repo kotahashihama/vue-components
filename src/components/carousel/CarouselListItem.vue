@@ -25,6 +25,15 @@ export default {
 </script>
 
 <style>
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 450px;
+  background: #000;
+}
+
 .image {
   display: block;
 }
