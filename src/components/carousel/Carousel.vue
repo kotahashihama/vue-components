@@ -8,7 +8,7 @@
         :height="height"
         :style="{
           width: width * items.length + 'px',
-          left: width * -currentItem + 'px'
+          left: width * -currentIndex + 'px'
         }"
       />
     </transition>
@@ -56,7 +56,7 @@ export default {
       ],
       interval: 5000,
 
-      currentItem: 0,
+      currentIndex: 0,
       width: 0,
       height: 0
     };
@@ -91,29 +91,21 @@ export default {
     },
     autoPaging() {
       setInterval(() => {
-        this.currentItem++;
-
-        if (this.currentItem === this.items.length) {
-          this.currentItem = 0;
-        }
+        this.showNextItem();
       }, this.interval);
     },
     showPrevItem() {
-      const lastItem = this.items.length - 1;
-
-      if (this.currentItem === 0) {
-        this.currentItem = lastItem;
+      if (this.currentIndex === 0) {
+        this.currentIndex = this.items.length - 1;
       } else {
-        this.currentItem--;
+        this.currentIndex--;
       }
     },
     showNextItem() {
-      const lastItem = this.items.length - 1;
-
-      if (this.currentItem === lastItem) {
-        this.currentItem = 0;
+      if (this.currentIndex === this.items.length - 1) {
+        this.currentIndex = 0;
       } else {
-        this.currentItem++;
+        this.currentIndex++;
       }
     }
   }
