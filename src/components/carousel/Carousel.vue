@@ -30,32 +30,18 @@ export default {
     CarouselList,
     CarouselArrows
   },
+  props: {
+    interval: {
+      type: Number,
+      default: 0
+    },
+    items: {
+      type: Array,
+      default: []
+    }
+  },
   data() {
     return {
-      items: [
-        {
-          image: "http://placehold.jp/790x300.png",
-          link: "http://example.com/"
-        },
-        {
-          image: "http://placehold.jp/150x150.png",
-          link: ""
-        },
-        {
-          image: "http://placehold.jp/300x100.png",
-          link: ""
-        },
-        {
-          image: "http://placehold.jp/500x440.png",
-          link: "http://example.com/"
-        },
-        {
-          image: "http://placehold.jp/220x500.png",
-          link: ""
-        }
-      ],
-      interval: 5000,
-
       currentIndex: 0,
       width: 0,
       height: 0
