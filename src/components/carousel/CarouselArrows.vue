@@ -1,5 +1,8 @@
 <template>
-  <div class="carousel-arrows">
+  <div
+    class="carousel-arrows"
+    :style="{ width: width + 'px', height: height + 'px' }"
+  >
     <CarouselArrow class="arrow" @click="showPrevItem()">left</CarouselArrow>
     <CarouselArrow class="arrow" @click="showNextItem()">right</CarouselArrow>
   </div>
@@ -11,6 +14,16 @@ import CarouselArrow from "./CarouselArrow.vue";
 export default {
   components: {
     CarouselArrow
+  },
+  props: {
+    width: {
+      type: Number,
+      default: 0
+    },
+    height: {
+      type: Number,
+      default: 0
+    }
   },
   methods: {
     showPrevItem() {
@@ -33,8 +46,6 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 800px;
-  height: 450px;
   color: #fff;
 }
 </style>

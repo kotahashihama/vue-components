@@ -1,11 +1,13 @@
 <template>
   <ul class="carousel-set">
     <CarouselListItem
-      ref="index"
+      ref="items"
       v-for="(item, index) in items"
       :key="index"
       :image="item.image"
       :link="item.link"
+      :width="width"
+      :height="height"
     />
   </ul>
 </template>
@@ -21,6 +23,14 @@ export default {
     items: {
       type: Array,
       default: []
+    },
+    width: {
+      type: Number,
+      default: 0
+    },
+    height: {
+      type: Number,
+      default: 0
     }
   }
 };

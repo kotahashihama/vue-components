@@ -1,15 +1,20 @@
 <template>
-  <div class="carousel">
+  <div class="carousel" :style="{ width: width + 'px', height: height + 'px' }">
     <transition name="fade">
       <CarouselList
+        ref="carouselList"
         :items="items"
+        :width="width"
+        :height="height"
         :style="{
-          width: itemWidth * items.length + 'px',
-          left: itemWidth * -currentItem + 'px'
+          width: width * items.length + 'px',
+          left: width * -currentItem + 'px'
         }"
       />
     </transition>
     <CarouselArrows
+      :width="width"
+      :height="height"
       @show-prev-item="showPrevItem()"
       @show-next-item="showNextItem()"
     />
@@ -29,35 +34,61 @@ export default {
     return {
       items: [
         {
-          image: "http://placehold.jp/800x450.png",
-          link: ""
+          image: "http://placehold.jp/790x300.png",
+          link: "http://example.com/"
         },
         {
           image: "http://placehold.jp/150x150.png",
           link: ""
         },
         {
-          image: "http://placehold.jp/800x450.png",
+          image: "http://placehold.jp/300x100.png",
           link: ""
         },
         {
-          image: "http://placehold.jp/800x450.png",
-          link: ""
+          image: "http://placehold.jp/500x440.png",
+          link: "http://example.com/"
         },
         {
-          image: "http://placehold.jp/800x450.png",
+          image: "http://placehold.jp/220x500.png",
           link: ""
         }
       ],
+      interval: 5000,
+
       currentItem: 0,
-      itemWidth: 800,
-      interval: 5000
+      width: 0,
+      height: 0
     };
   },
   mounted() {
+    this.setCarouselSize();
     this.autoPaging();
   },
   methods: {
+    setCarouselSize() {
+      window.onload = () => {
+        const listItems = Array.from(this.$refs.carouselList.$el.children);
+        const imageWidths = listItems.map(item => {
+          const childElement = item.children[0];
+          if (childElement.tagName === "A") {
+            return childElement.children[0].clientWidth;
+          } else {
+            return childElement.clientWidth;
+          }
+        });
+        const imageHeights = listItems.map(item => {
+          const childElement = item.children[0];
+          if (childElement.tagName === "A") {
+            return childElement.children[0].clientHeight;
+          } else {
+            return childElement.clientHeight;
+          }
+        });
+        this.width = Math.max(...imageWidths);
+        this.height = Math.max(...imageHeights);
+      };
+    },
     autoPaging() {
       setInterval(() => {
         this.currentItem++;
@@ -93,7 +124,5 @@ export default {
 .carousel {
   overflow: hidden;
   position: relative;
-  width: 800px;
-  height: 450px;
 }
 </style>
