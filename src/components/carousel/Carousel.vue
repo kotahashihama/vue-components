@@ -38,43 +38,25 @@ export default {
     items: {
       type: Array,
       default: []
+    },
+    width: {
+      type: Number,
+      default: 0
+    },
+    height: {
+      type: Number,
+      default: 0
     }
   },
   data() {
     return {
       currentIndex: 0,
-      width: 0,
-      height: 0
     };
   },
   mounted() {
-    this.setCarouselSize();
     this.autoPaging();
   },
   methods: {
-    setCarouselSize() {
-      window.onload = () => {
-        const listItems = Array.from(this.$refs.carouselList.$el.children);
-        const imageWidths = listItems.map(item => {
-          const childElement = item.children[0];
-          if (childElement.tagName === "A") {
-            return childElement.children[0].clientWidth;
-          } else {
-            return childElement.clientWidth;
-          }
-        });
-        const imageHeights = listItems.map(item => {
-          const childElement = item.children[0];
-          if (childElement.tagName === "A") {
-            return childElement.children[0].clientHeight;
-          } else {
-            return childElement.clientHeight;
-          }
-        });
-        this.width = Math.max(...imageWidths);
-        this.height = Math.max(...imageHeights);
-      };
-    },
     autoPaging() {
       setInterval(() => {
         this.showNextItem();

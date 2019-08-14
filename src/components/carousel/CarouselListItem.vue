@@ -5,7 +5,7 @@
     :style="{ width: width + 'px', height: height + 'px' }"
   >
     <a :href="link" class="link">
-      <img :src="image" alt="" class="image" />
+      <img :src="image" alt="" class="image" :style="{ maxWidth: width + 'px', maxHeight: height + 'px' }" />
     </a>
   </li>
   <li
@@ -13,7 +13,7 @@
     class="carousel-item"
     :style="{ width: width + 'px', height: height + 'px' }"
   >
-    <img :src="image" alt="" class="image" />
+    <img :src="image" alt="" class="image" :style="{ maxWidth: width + 'px', maxHeight: height + 'px' }" />
   </li>
 </template>
 

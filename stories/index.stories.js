@@ -7,6 +7,8 @@ storiesOf("カルーセル", module).add("Carousel", () => ({
   data() {
     return {
       interval: 5000,
+      width: 790,
+      height: 500,
       items: [
         {
           image: "https://placehold.jp/790x300.png",
@@ -31,5 +33,5 @@ storiesOf("カルーセル", module).add("Carousel", () => ({
       ]
     };
   },
-  template: `<Carousel :interval="interval" :items="items" />`
+  template: `<Carousel :interval="interval" :width="width" :height="height" :items="items" />`
 }));
