@@ -1,29 +1,25 @@
-# vue-components
+# Vue.js で Storybook に UI コンポーネントを作成
 
-## Project setup
-```
-npm install
-```
+Vue.js で Storybook に UI コンポーネントを作成しました。  
+https://vue-components-storybook.netlify.com/
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## UI コンポーネント
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- カルーセル
 
-### Run your tests
-```
-npm run test
-```
+## アピールポイント
 
-### Lints and fixes files
-```
-npm run lint
-```
+実用を考え、 Story からコンポーネントへ設定を渡せる設計にしています。
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 使用技術
+
+- 言語: JavaScript
+- フレームワーク: Vue CLI (Vue.js)
+- プリプロセッサ: Sass
+- デプロイ: Netlify
+
+## バージョン
+
+- JavaScript ES2015 (ES6)
+- Vue.js 2.6.10
+- Vue CLI 3.10.0
