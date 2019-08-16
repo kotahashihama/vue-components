@@ -1,6 +1,6 @@
 <template>
   <i class="expansion-panel-header-title material-icons">
-    arrow_drop_up
+    arrow_drop_down
   </i>
 </template>
 
@@ -10,5 +10,6 @@
   justify-content: center;
   align-items: center;
   width: 28px;
+  transition: all 0.3s;
 }
 </style>

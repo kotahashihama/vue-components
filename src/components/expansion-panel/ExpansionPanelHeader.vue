@@ -1,12 +1,12 @@
 <template>
-  <div class="expansion-panel-header">
+  <div class="expansion-panel-header" @click="$emit('click')">
     <ExpansionPanelHeaderTitle>
       <template v-slot:title>
         <slot name="title" />
       </template>
     </ExpansionPanelHeaderTitle>
 
-    <ExpansionPanelHeaderArrow />
+    <ExpansionPanelHeaderArrow :class="{ open: isOpen }" />
   </div>
 </template>
 
@@ -18,6 +18,12 @@ export default {
   components: {
     ExpansionPanelHeaderTitle,
     ExpansionPanelHeaderArrow
+  },
+  props: {
+    isOpen: {
+      type: Boolean,
+      default: false
+    }
   }
 };
 </script>
@@ -28,5 +34,9 @@ export default {
   display: flex;
   padding: 12px;
   background: #f3f3f3;
+}
+
+.open {
+  transform: rotateX(180deg);
 }
 </style>

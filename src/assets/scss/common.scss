@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .material-icons {
   font-family: "Material Icons";
   font-weight: normal;

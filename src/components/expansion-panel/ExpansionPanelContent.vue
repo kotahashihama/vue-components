@@ -1,11 +1,25 @@
 <template>
   <div class="expansion-panel-content">
-    <slot name="content" />
+    <ExpansionPanelContentBox>
+      <template v-slot:content>
+        <slot name="content" />
+      </template>
+    </ExpansionPanelContentBox>
   </div>
 </template>
 
+<script>
+import ExpansionPanelContentBox from "./ExpansionPanelContentBox.vue";
+
+export default {
+  components: {
+    ExpansionPanelContentBox
+  }
+};
+</script>
+
 <style lang="scss" scoped>
 .expansion-panel-content {
-  padding: 12px;
+  overflow: hidden;
 }
 </style>
