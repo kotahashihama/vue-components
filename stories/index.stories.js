@@ -1,6 +1,7 @@
 import { storiesOf } from "@storybook/vue";
 
 import Carousel from "../src/components/carousel/Carousel.vue";
+import ExpansionPanel from "../src/components/expansion-panel/ExpansionPanel.vue";
 
 storiesOf("カルーセル", module).add("Carousel", () => ({
   components: { Carousel },
@@ -34,4 +35,9 @@ storiesOf("カルーセル", module).add("Carousel", () => ({
     };
   },
   template: `<Carousel :interval="interval" :width="width" :height="height" :items="items" />`
+}));
+
+storiesOf("開閉パネル", module).add("ExpansionPanel", () => ({
+  components: { ExpansionPanel },
+  template: `<ExpansionPanel />`
 }));
