@@ -39,5 +39,5 @@ storiesOf("カルーセル", module).add("Carousel", () => ({
 
 storiesOf("開閉パネル", module).add("ExpansionPanel", () => ({
   components: { ExpansionPanel },
-  template: `<ExpansionPanel />`
+  template: `<ExpansionPanel style="width: 320px;"><template v-slot:title>タイトル</template><template v-slot:content>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</template></ExpansionPanel>`
 }));
