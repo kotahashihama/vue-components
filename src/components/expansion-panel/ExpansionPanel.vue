@@ -1,6 +1,6 @@
 <template>
   <div class="expansion-panel">
-    <ExpansionPanelHeader :is-open="isOpen" @click="togglePanel()">
+    <ExpansionPanelHeader :is-open="isPanelOpen" @click="togglePanel()">
       <template v-slot:title>
         <slot name="title" />
       </template>
@@ -13,7 +13,7 @@
       v-on:before-leave="beforeLeave"
       v-on:leave="leave"
     >
-      <ExpansionPanelContent v-if="isOpen">
+      <ExpansionPanelContent v-if="isPanelOpen">
         <template v-slot:content>
           <slot name="content" />
         </template>
@@ -31,14 +31,20 @@ export default {
     ExpansionPanelHeader,
     ExpansionPanelContent
   },
+  props: {
+    isOpen: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
-      isOpen: false
+      isPanelOpen: this.isOpen
     };
   },
   methods: {
     togglePanel() {
-      this.isOpen = !this.isOpen;
+      this.isPanelOpen = !this.isPanelOpen;
     },
     beforeEnter(el) {
       el.style.height = "0";
