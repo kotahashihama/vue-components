@@ -6,10 +6,13 @@
 
 <style lang="scss" scoped>
 .expansion-panel-header-title {
-  display: flex !important;
   justify-content: center;
   align-items: center;
   width: 28px;
   transition: all 0.3s;
+
+  &.material-icons {
+    display: flex;
+  }
 }
 </style>
