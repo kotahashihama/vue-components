@@ -64,6 +64,7 @@ export default {
 
 <style lang="scss" scoped>
 .expansion-panel {
+  margin-bottom: 14px;
   border: solid 1px #d0d0d0;
   border-radius: 3px;
 

@@ -44,5 +44,9 @@ storiesOf("開閉パネル", module).add("ExpansionPanel", () => ({
       isOpen: true
     };
   },
-  template: `<ExpansionPanel :is-open="isOpen" style="width: 320px;"><template v-slot:title>タイトル</template><template v-slot:content>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</template></ExpansionPanel>`
+  template: `<div>
+               <ExpansionPanel :is-open="isOpen" style="width: 320px;"><template v-slot:title>タイトル</template><template v-slot:content>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</template></ExpansionPanel>
+               <ExpansionPanel style="width: 320px;"><template v-slot:title>タイトル</template><template v-slot:content>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</template></ExpansionPanel>
+               <ExpansionPanel style="width: 320px;"><template v-slot:title>タイトルタイトルタイトルタイトルタイトルタイトル</template><template v-slot:content>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</template></ExpansionPanel>
+             </div>`
 }));
