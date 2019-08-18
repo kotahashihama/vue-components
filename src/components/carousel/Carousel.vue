@@ -50,7 +50,7 @@ export default {
   },
   data() {
     return {
-      currentIndex: 0,
+      currentIndex: 0
     };
   },
   mounted() {
@@ -84,5 +84,6 @@ export default {
 .carousel {
   overflow: hidden;
   position: relative;
+  margin-bottom: 14px;
 }
 </style>

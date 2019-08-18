@@ -31,10 +31,35 @@ storiesOf("カルーセル", module).add("Carousel", () => ({
           image: "https://placehold.jp/220x500.png",
           link: ""
         }
+      ],
+
+      interval2: 3000,
+      width2: 450,
+      height2: 300,
+      items2: [
+        {
+          image: "https://placehold.jp/120x340.png",
+          link: "http://example.com/"
+        },
+        {
+          image: "https://placehold.jp/330x200.png",
+          link: ""
+        },
+        {
+          image: "https://placehold.jp/300x100.png",
+          link: ""
+        },
+        {
+          image: "https://placehold.jp/450x300.png",
+          link: "http://example.com/"
+        }
       ]
     };
   },
-  template: `<Carousel :interval="interval" :width="width" :height="height" :items="items" />`
+  template: `<div>
+               <Carousel :interval="interval" :width="width" :height="height" :items="items" />
+               <Carousel :interval="interval2" :width="width2" :height="height2" :items="items2" />
+             </div>`
 }));
 
 storiesOf("開閉パネル", module).add("ExpansionPanel", () => ({
